@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이미지 변환기</title>
     <link rel="stylesheet" href="style.css">
+    <!-- ZIP 다운로드를 위한 라이브러리 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>🖼️ 이미지 변환기</h1>
+        <h1>이미지 변환기</h1>
         <p class="description">이미지를 WebP 또는 PNG로 변환해보세요! (최대 30개)</p>
 
         <!-- 파일 선택 영역 -->
         <div class="upload-area" id="uploadArea">
-            <p>📁 여기를 클릭하거나 파일을 드래그하세요</p>
+            <p>여기를 클릭하거나 파일을 드래그하세요</p>
             <input type="file" id="fileInput" multiple accept="image/*">
         </div>
 
@@ -26,8 +28,11 @@
             </select>
         </div>
 
-        <!-- 변환 버튼 -->
-        <button id="convertBtn" disabled>🔄 변환하기</button>
+        <!-- 버튼 영역 -->
+        <div class="button-group">
+            <button id="convertBtn" disabled>선택 파일 변환</button>
+            <button id="clearBtn" class="secondary" disabled>전체 삭제</button>
+        </div>
 
         <!-- 선택된 파일 목록 -->
         <div id="fileList" class="file-list"></div>
